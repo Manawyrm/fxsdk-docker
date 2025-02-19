@@ -6,8 +6,11 @@ on:
 
 jobs:
   push_to_registry:
-    name: Push Docker image to Docker Hub
-    runs-on: ubuntu-latest
+    name: Push Docker image to Docker Hub (${{ matrix.os }})
+    strategy:
+      matrix:
+        os: [ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.os }}
     permissions:
       packages: write
       contents: read

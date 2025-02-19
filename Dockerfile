@@ -20,7 +20,12 @@ RUN apt update && apt install -y \
     libppl-dev \
     flex \
     texinfo \
-    dialog
+    dialog \
+    sudo \
+    python3-pip-whl \
+    python3-setuptools-whl \
+    python3-venv \
+    python3.11-venv
 
 WORKDIR /casio
 
@@ -33,4 +38,4 @@ RUN giteapc install -y Lephenixnoir/fxsdk:noudisks2 Lephenixnoir/sh-elf-binutils
 RUN giteapc install -y Lephenixnoir/OpenLibm Vhex-Kernel-Core/fxlibc
 RUN giteapc install -y Lephenixnoir/sh-elf-gcc
 RUN giteapc install -y Lephenixnoir/gint Lephenixnoir/libprof
-
+RUN giteapc install -y cake/cahute@0.6
